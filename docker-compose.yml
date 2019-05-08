@@ -1,0 +1,12 @@
+version: '3'
+services:
+  gophish:
+    image: matteoggl/gophish
+    restart: always
+    volumes:
+      - ${PWD}/config.json:/opt/gophish-v0.6.0-linux-64bit/config.json
+      - ${PWD}/sqlite:/opt/gophish-v0.6.0-linux-64bit/sqlite
+      - ${PWD}/crt:/opt/gophish-v0.6.0-linux-64bit/crt
+    ports:
+      - "3333:3333"
+      - "8083:80"
